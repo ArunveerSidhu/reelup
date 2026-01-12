@@ -1,18 +1,16 @@
-'use client'
+"use client";
 
 import CustomButton from "@/components/ui/CustomButton";
 import { useRouter } from "next/navigation";
-import { HiArrowRight } from "react-icons/hi2";
 
 export default function page() {
   const router = useRouter();
   const handleLoginPress = () => {
-    router.push('/auth/login');
+    router.push("/auth/login");
   };
   const handleSignUpPress = () => {
-    router.push('/auth/register');
+    router.push("/auth/register");
   };
-
 
   return (
     <div className="flex items-center justify-center min-h-screen w-full px-4">
@@ -25,19 +23,17 @@ export default function page() {
               -a social network for cinephiles.
             </p>
           </h1>
-          
+
           <div className="flex flex-col md:flex-row gap-4">
-            <CustomButton 
-              title="Login" 
+            <CustomButton
+              title="Login"
               onPress={handleLoginPress}
               variant="primary"
-              icon={<HiArrowRight size={20} />}
             />
-            <CustomButton 
-              title="Sign Up" 
+            <CustomButton
+              title="Sign Up"
               onPress={handleSignUpPress}
               variant="secondary"
-              icon={<HiArrowRight size={20} />}
             />
           </div>
         </div>
