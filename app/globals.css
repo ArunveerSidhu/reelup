@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+/* Tell Tailwind which files to scan */
+@source "../components";
+@source "./app";
+
+@theme {
+  --font-old-standard-fallback: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-lato-fallback: ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --font-family-old-standard: var(--font-old-standard), var(--font-old-standard-fallback);
+    --font-family-lato: var(--font-lato), var(--font-lato-fallback);
+  }
+}
+
+@utility font-old-standard {
+  font-family: var(--font-old-standard), ui-serif, Georgia, serif;
+}
+
+@utility font-lato {
+  font-family: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+}
