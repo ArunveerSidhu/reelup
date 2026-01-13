@@ -1,15 +1,12 @@
 "use client";
 
 import CustomButton from "@/components/ui/CustomButton";
-import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { FcGoogle } from "react-icons/fc";
 
-export default function page() {
-  const router = useRouter();
-  const handleLoginPress = () => {
-    router.push("/auth/login");
-  };
-  const handleSignUpPress = () => {
-    router.push("/auth/register");
+export default function WelcomePage() {
+  const handleGoogleSignIn = () => {
+    signIn("google", { callbackUrl: "/home" });
   };
 
   return (
@@ -24,16 +21,12 @@ export default function page() {
             </p>
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex justify-center">
             <CustomButton
-              title="Login"
-              onPress={handleLoginPress}
+              title="Sign in with Google"
+              onPress={handleGoogleSignIn}
               variant="primary"
-            />
-            <CustomButton
-              title="Sign Up"
-              onPress={handleSignUpPress}
-              variant="secondary"
+              icon={<FcGoogle size={24} />}
             />
           </div>
         </div>
