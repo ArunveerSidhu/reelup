@@ -5,7 +5,7 @@ import { NavButton } from "./NavButton";
 
 export const Navbar = () => {
   return (
-    <div className="py-6 justify-between items-center bg-[#ffc567] border-b-4">
+    <div className="py-4 justify-between items-center bg-[#ffc567] border-b-4">
       <div className="max-w flex flex-row justify-between items-center">
         <Image src={logo} alt="brand-logo" className="h-10 w-auto cursor-pointer" />
         <div className="flex flex-row gap-x-4 items-center justify-center">

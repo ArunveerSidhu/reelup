@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import LogoutButton from "@/components/home/LogoutButton";
 import { Navbar } from "@/components/home/Navbar";
 
 export default async function HomePage() {
