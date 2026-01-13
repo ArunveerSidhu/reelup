@@ -23,3 +23,8 @@
 @utility font-lato {
   font-family: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
 }
+
+.max-w {
+  max-width: 1200px;
+  margin: 0 auto;
+}

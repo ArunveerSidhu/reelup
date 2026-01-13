@@ -1,14 +1,21 @@
-"use client";
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import LogoutButton from "@/components/home/LogoutButton";
+import { Navbar } from "@/components/home/Navbar";
 
-import { signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
-export default function page() {
-  const router = useRouter();
-  const handleLogout = async () => {
-    await signOut();
-    router.push("/auth/welcome");
-  };
+export default async function HomePage() {
+  // Check if user is logged in
+  const session = await getServerSession(authOptions);
+
+  // If not logged in, redirect to welcome page
+  if (!session) {
+    redirect("/auth/welcome");
+  }
+
   return (
-    <button onClick={handleLogout}>Logout</button>
+    <div className="min-h-screen bg-[#552cb7]">
+      <Navbar />
+    </div>
   );
 }
