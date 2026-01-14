@@ -40,7 +40,7 @@ export const ProfileButton = () => {
       </button>
 
       {open && (
-        <div className="absolute mt-2 w-40 rounded-none bg-[#FB7da8] border-black border-b-5 border-r-4 border-l-2 border-t-2">
+        <div className="absolute right-0 mt-2 w-40 rounded-none bg-[#FB7da8] border-black border-b-5 border-r-4 border-l-2 border-t-2 shadow-lg z-50">
           <MenuItem label="View Profile" />
           <MenuItem label="Settings" />
           <MenuItem label="Logout" onClick={handleLogout} />
